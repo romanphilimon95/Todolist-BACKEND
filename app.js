@@ -12,7 +12,8 @@ const app = express();
 const apiRoutes = require('./src/modules/routes/routes');
 
 try {
-  const url = process.env.DB_URL;
+  const url = process.env.DB_URL
+  || 'mongodb+srv://romanphilimon95:695v89eqbhh4hy9FTK2S@costaccountingtable.dxkza.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
   mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
